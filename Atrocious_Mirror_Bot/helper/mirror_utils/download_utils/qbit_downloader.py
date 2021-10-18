@@ -110,7 +110,7 @@ class QbitTorrent:
                         count += 1
                     if count == 4:
                         break
-                URL = f"{BASE_URL}/eunha/files/{self.ext_hash}"
+                URL = f"{BASE_URL}/Atrocious/files/{self.ext_hash}"
                 pindata = f"pin {gid} {pincode}"
                 donedata = f"done {gid} {self.ext_hash}"
                 buttons = button_build.ButtonMaker()
