@@ -61,14 +61,14 @@ def cloneNode(update, context):
         else:
             uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
         if uname is not None:
-            Uploader = f'\n\ncc: {uname}'
+            Uploader = f'\n\nUploader: {uname}'
             men = f'{uname} '
         if button in ["cancelled", ""]:
             sendMessage(men + result, context.bot, update)
         else:
             sendMarkup(result + Uploader, context.bot, update, button)
     else:
-        sendMessage('Provide G-Drive Shareable Link to Clone.', context.bot, update)
+        sendMessage('Please Give Google Drive Shareable Link for Clone.', context.bot, update)
 
 clone_handler = CommandHandler(BotCommands.CloneCommand, cloneNode, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
 dispatcher.add_handler(clone_handler)
